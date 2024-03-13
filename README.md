@@ -8,7 +8,10 @@ Adjust Calculations.R for inpute file names and execute to calculate mean covera
 Adjust Addnucleotides.sh for inpute file names and reference and execute to add the nucleotide of every transcript position to the file.
 Adjust filtersites.py for input file names and filtering criteria and execute to filter sites according to criteria.
 Adjust compare.py for input file names and execute to compare sites in WT datasets to sites in PUS1/3 datasets. Output are sites that are present in both datasets. This script was used to find sites that are present in WT and PUS1-/- datasets.
-Adjust PUSdependentsites.py for input file names and filtering criteria and execute to determine sites that are present in the WT and PUS1 datasets but do not reach the threshold in the PUS3 dataset.
+Adjust PUSdependentsites.py for input file names and filtering criteria and execute to determine sites that are present in the WT and PUS1 datasets but do not meet the filtering criteria in the PUS3 dataset.
 Adjust ENSTtogenomiclocation.R for input file names to transform transcript ID and position to genmoic coordinates.
 
 Adjust Covnormalizeforcorrelation.py for inpute file names. To create correlation plots, sites with a minimum average read coverage of 50 were used in each dataset to remove noise. The coverage value of every repliate at the transcript position was normalized to the sum of all coverage values of that replicate (library size normalization). The Log correlation plot was created with Logcorrelationplot.py.
+
+Use sitelocationontranscript.py to determine the location of the psi site on the transcript. The input table must contain transcript ID in column 1 and genomic coordinates in column 2 (tab delimited). The GTF file (MANE.GRCh38.v1.0.ensembl_genomic.gtf) is also required.
+Use kmersequences.py to determine the sequence motif (k-mer) in which the psi site is located. The input table must contain transcrip ID in column 1 and transcript position in column 2 (tab delimited). The transcript FASTA file is also required to which mitochondrial mRNA sequences were added (MANE.GRCh38.v1.0.select_ensembl_rna_plusMT_singleline.fna).
